@@ -37,8 +37,8 @@
         <script src="js/labels.js"></script>
         <script src="js/leaflet.photon.js"></script>
         <script src="js/leaflet-measure.js"></script>
-        <script src="data/ctastro_2.js"></script>
-        <script src="data/camino_3.js"></script>
+        <script src="data/ctastro_1.js"></script>
+        <script src="data/camino_2.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
@@ -102,20 +102,8 @@
             maxNativeZoom: 19
         });
         layer_OSMStandard_0;
-        map.createPane('pane_GoogleHybrid_1');
-        map.getPane('pane_GoogleHybrid_1').style.zIndex = 401;
-        var layer_GoogleHybrid_1 = L.tileLayer('https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
-            pane: 'pane_GoogleHybrid_1',
-            opacity: 1.0,
-            attribution: '<a href="https://www.google.at/permissions/geoguidelines/attr-guide.html">Map data ©2015 Google</a>',
-            minZoom: 1,
-            maxZoom: 28,
-            minNativeZoom: 0,
-            maxNativeZoom: 20
-        });
-        layer_GoogleHybrid_1;
-        map.addLayer(layer_GoogleHybrid_1);
-        function pop_ctastro_2(feature, layer) {
+        map.addLayer(layer_OSMStandard_0);
+        function pop_ctastro_1(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">CAMPO</th>\
@@ -173,100 +161,90 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_ctastro_2_0(feature) {
+        function style_ctastro_1_0(feature) {
             switch(String(feature.properties['Lote'])) {
                 case '16A':
                     return {
-                pane: 'pane_ctastro_2',
+                pane: 'pane_ctastro_1',
                 opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
+                color: 'rgba(196,138,240,1.0)',
                 dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(196,138,240,1.0)',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
                 interactive: true,
             }
                     break;
                 case '16B':
                     return {
-                pane: 'pane_ctastro_2',
+                pane: 'pane_ctastro_1',
                 opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
+                color: 'rgba(60,214,83,1.0)',
                 dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(60,214,83,1.0)',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
                 interactive: true,
             }
                     break;
                 case '17A':
                     return {
-                pane: 'pane_ctastro_2',
+                pane: 'pane_ctastro_1',
                 opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
+                color: 'rgba(202,25,70,1.0)',
                 dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(202,25,70,1.0)',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
                 interactive: true,
             }
                     break;
                 case '17B':
                     return {
-                pane: 'pane_ctastro_2',
+                pane: 'pane_ctastro_1',
                 opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
+                color: 'rgba(108,181,223,1.0)',
                 dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(108,181,223,1.0)',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
                 interactive: true,
             }
                     break;
                 default:
                     return {
-                pane: 'pane_ctastro_2',
+                pane: 'pane_ctastro_1',
                 opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
+                color: 'rgba(224,218,98,1.0)',
                 dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(224,218,98,1.0)',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
                 interactive: true,
             }
                     break;
             }
         }
-        map.createPane('pane_ctastro_2');
-        map.getPane('pane_ctastro_2').style.zIndex = 402;
-        map.getPane('pane_ctastro_2').style['mix-blend-mode'] = 'normal';
-        var layer_ctastro_2 = new L.geoJson(json_ctastro_2, {
+        map.createPane('pane_ctastro_1');
+        map.getPane('pane_ctastro_1').style.zIndex = 401;
+        map.getPane('pane_ctastro_1').style['mix-blend-mode'] = 'normal';
+        var layer_ctastro_1 = new L.geoJson(json_ctastro_1, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_ctastro_2',
-            layerName: 'layer_ctastro_2',
-            pane: 'pane_ctastro_2',
-            onEachFeature: pop_ctastro_2,
-            style: style_ctastro_2_0,
+            dataVar: 'json_ctastro_1',
+            layerName: 'layer_ctastro_1',
+            pane: 'pane_ctastro_1',
+            onEachFeature: pop_ctastro_1,
+            style: style_ctastro_1_0,
         });
-        bounds_group.addLayer(layer_ctastro_2);
-        map.addLayer(layer_ctastro_2);
-        function pop_camino_3(feature, layer) {
+        bounds_group.addLayer(layer_ctastro_1);
+        map.addLayer(layer_ctastro_1);
+        function pop_camino_2(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Tipo</th>\
@@ -296,9 +274,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_camino_3_0() {
+        function style_camino_2_0() {
             return {
-                pane: 'pane_camino_3',
+                pane: 'pane_camino_2',
                 opacity: 1,
                 color: 'rgba(196,60,57,1.0)',
                 dashArray: '',
@@ -309,23 +287,22 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_camino_3');
-        map.getPane('pane_camino_3').style.zIndex = 403;
-        map.getPane('pane_camino_3').style['mix-blend-mode'] = 'normal';
-        var layer_camino_3 = new L.geoJson(json_camino_3, {
+        map.createPane('pane_camino_2');
+        map.getPane('pane_camino_2').style.zIndex = 402;
+        map.getPane('pane_camino_2').style['mix-blend-mode'] = 'normal';
+        var layer_camino_2 = new L.geoJson(json_camino_2, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_camino_3',
-            layerName: 'layer_camino_3',
-            pane: 'pane_camino_3',
-            onEachFeature: pop_camino_3,
-            style: style_camino_3_0,
+            dataVar: 'json_camino_2',
+            layerName: 'layer_camino_2',
+            pane: 'pane_camino_2',
+            onEachFeature: pop_camino_2,
+            style: style_camino_2_0,
         });
-        bounds_group.addLayer(layer_camino_3);
+        bounds_group.addLayer(layer_camino_2);
         var overlaysTree = [
-            {label: '<img src="legend/camino_3.png" /> camino', layer: layer_camino_3},
-            {label: 'ctastro<br /><table><tr><td style="text-align: center;"><img src="legend/ctastro_2_16A0.png" /></td><td>16A</td></tr><tr><td style="text-align: center;"><img src="legend/ctastro_2_16B1.png" /></td><td>16B</td></tr><tr><td style="text-align: center;"><img src="legend/ctastro_2_17A2.png" /></td><td>17A</td></tr><tr><td style="text-align: center;"><img src="legend/ctastro_2_17B3.png" /></td><td>17B</td></tr><tr><td style="text-align: center;"><img src="legend/ctastro_2_4.png" /></td><td></td></tr></table>', layer: layer_ctastro_2},
-            {label: "Google Hybrid", layer: layer_GoogleHybrid_1, radioGroup: 'bm' },
+            {label: '<img src="legend/camino_2.png" /> camino', layer: layer_camino_2},
+            {label: 'ctastro<br /><table><tr><td style="text-align: center;"><img src="legend/ctastro_1_16A0.png" /></td><td>16A</td></tr><tr><td style="text-align: center;"><img src="legend/ctastro_1_16B1.png" /></td><td>16B</td></tr><tr><td style="text-align: center;"><img src="legend/ctastro_1_17A2.png" /></td><td>17A</td></tr><tr><td style="text-align: center;"><img src="legend/ctastro_1_17B3.png" /></td><td>17B</td></tr><tr><td style="text-align: center;"><img src="legend/ctastro_1_4.png" /></td><td></td></tr></table>', layer: layer_ctastro_1},
             {label: "OSM Standard", layer: layer_OSMStandard_0, radioGroup: 'bm' },]
         var lay = L.control.layers.tree(null, overlaysTree,{
             //namedToggle: true,
